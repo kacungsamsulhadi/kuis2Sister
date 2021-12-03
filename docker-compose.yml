@@ -22,17 +22,17 @@ services:
     ports:
     - "3306:3306"
     volumes:
-    - db:/var/lib/mysql
-    - ./db_warung.sql:/docker-entrypoint-initdb.d/db_warung.sql
+      - db:/var/lib/mysql
+      - ./db_warung.sql:/docker-entrypoint-initdb.d/db_warung.sql
     networks:
-    - backend
+      - backend
   volumes:
   db:
 
   networks:
     backend:
-    name: backend-network
-    ipam:
-      driver: default
-      config:
-        -subnet: 10.0.0.144/24
+      name: backend-network
+      ipam:
+       driver: default
+        config:
+         -subnet: 10.0.0.144/24
